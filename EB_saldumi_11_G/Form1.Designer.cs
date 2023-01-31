@@ -65,6 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Location = new System.Drawing.Point(270, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 24);
@@ -74,18 +75,22 @@
             // Nauda
             // 
             this.Nauda.AutoSize = true;
-            this.Nauda.Location = new System.Drawing.Point(116, 174);
+            this.Nauda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.Nauda.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Nauda.Location = new System.Drawing.Point(55, 174);
             this.Nauda.Name = "Nauda";
-            this.Nauda.Size = new System.Drawing.Size(203, 13);
+            this.Nauda.Size = new System.Drawing.Size(276, 18);
             this.Nauda.TabIndex = 4;
             this.Nauda.Text = "Ievadiet sev pieejamo naudas daudzumu!";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 316);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(115, 315);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 13);
+            this.label2.Size = new System.Drawing.Size(216, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Daudzums, ko jus varat nopirkt!";
             // 
@@ -93,6 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(85, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(640, 42);
@@ -103,6 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SaddleBrown;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
