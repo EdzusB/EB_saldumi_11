@@ -16,5 +16,18 @@ namespace EB_saldumi_11_G
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aprekins_Click(object sender, EventArgs e)
+        {
+            double sk1 = Convert.ToDouble(daudzums.Text);
+            double sk2 = 9.88;
+            double rezultats = sk1 / sk2;
+            daudzums_kg.Text = rezultats.ToString();
+        }
     }
 }
