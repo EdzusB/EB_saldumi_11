@@ -24,10 +24,10 @@ namespace EB_saldumi_11_G
 
         private void aprekins_Click(object sender, EventArgs e)
         {
-            double sk1 = Convert.ToDouble(daudzums.Text);
-            double sk2 = 9.88;
-            double rezultats = sk1 / sk2;
-            daudzums_kg.Text = rezultats.ToString();
+            double sk1 = Convert.ToDouble(daudzums.Text); //definejam ievadito skaitli
+            double sk2 = 9.88; //definejam konfektes cenu
+            double rezultats = sk1 / sk2; // aprekinam daudzumu
+            daudzums_kg.Text = rezultats.ToString(); // izvadam rezultatu
         }
     }
 }
