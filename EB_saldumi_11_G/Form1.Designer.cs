@@ -40,6 +40,13 @@
             this.check3 = new System.Windows.Forms.CheckBox();
             this.check4 = new System.Windows.Forms.CheckBox();
             this.check0 = new System.Windows.Forms.CheckBox();
+            this.text0 = new System.Windows.Forms.TextBox();
+            this.text1 = new System.Windows.Forms.TextBox();
+            this.text2 = new System.Windows.Forms.TextBox();
+            this.text3 = new System.Windows.Forms.TextBox();
+            this.text4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // daudzums
@@ -52,7 +59,7 @@
             // 
             // aprekins
             // 
-            this.aprekins.Location = new System.Drawing.Point(348, 276);
+            this.aprekins.Location = new System.Drawing.Point(347, 358);
             this.aprekins.Name = "aprekins";
             this.aprekins.Size = new System.Drawing.Size(75, 23);
             this.aprekins.TabIndex = 1;
@@ -62,7 +69,7 @@
             // 
             // daudzums_kg
             // 
-            this.daudzums_kg.Location = new System.Drawing.Point(337, 316);
+            this.daudzums_kg.Location = new System.Drawing.Point(337, 387);
             this.daudzums_kg.Name = "daudzums_kg";
             this.daudzums_kg.Size = new System.Drawing.Size(100, 20);
             this.daudzums_kg.TabIndex = 2;
@@ -72,7 +79,7 @@
             this.Nauda.AutoSize = true;
             this.Nauda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.Nauda.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Nauda.Location = new System.Drawing.Point(55, 110);
+            this.Nauda.Location = new System.Drawing.Point(55, 97);
             this.Nauda.Name = "Nauda";
             this.Nauda.Size = new System.Drawing.Size(276, 18);
             this.Nauda.TabIndex = 4;
@@ -83,15 +90,16 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(115, 315);
+            this.label2.Location = new System.Drawing.Point(225, 386);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 18);
+            this.label2.Size = new System.Drawing.Size(67, 18);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Daudzums, ko jus varat nopirkt!";
+            this.label2.Text = "Atlikums!";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Maroon;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(85, 9);
@@ -104,7 +112,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(89, 142);
+            this.label4.Location = new System.Drawing.Point(62, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(233, 13);
             this.label4.TabIndex = 7;
@@ -113,7 +121,7 @@
             // check1
             // 
             this.check1.AutoSize = true;
-            this.check1.Location = new System.Drawing.Point(348, 179);
+            this.check1.Location = new System.Drawing.Point(228, 237);
             this.check1.Name = "check1";
             this.check1.Size = new System.Drawing.Size(137, 17);
             this.check1.TabIndex = 8;
@@ -124,7 +132,7 @@
             // check2
             // 
             this.check2.AutoSize = true;
-            this.check2.Location = new System.Drawing.Point(348, 202);
+            this.check2.Location = new System.Drawing.Point(228, 260);
             this.check2.Name = "check2";
             this.check2.Size = new System.Drawing.Size(111, 17);
             this.check2.TabIndex = 9;
@@ -135,7 +143,7 @@
             // check3
             // 
             this.check3.AutoSize = true;
-            this.check3.Location = new System.Drawing.Point(348, 225);
+            this.check3.Location = new System.Drawing.Point(228, 289);
             this.check3.Name = "check3";
             this.check3.Size = new System.Drawing.Size(147, 17);
             this.check3.TabIndex = 10;
@@ -146,7 +154,7 @@
             // check4
             // 
             this.check4.AutoSize = true;
-            this.check4.Location = new System.Drawing.Point(348, 248);
+            this.check4.Location = new System.Drawing.Point(228, 314);
             this.check4.Name = "check4";
             this.check4.Size = new System.Drawing.Size(122, 17);
             this.check4.TabIndex = 11;
@@ -157,7 +165,7 @@
             // check0
             // 
             this.check0.AutoSize = true;
-            this.check0.Location = new System.Drawing.Point(348, 156);
+            this.check0.Location = new System.Drawing.Point(228, 211);
             this.check0.Name = "check0";
             this.check0.Size = new System.Drawing.Size(138, 17);
             this.check0.TabIndex = 12;
@@ -165,12 +173,80 @@
             this.check0.UseVisualStyleBackColor = true;
             this.check0.CheckedChanged += new System.EventHandler(this.check0_CheckedChanged);
             // 
+            // text0
+            // 
+            this.text0.Location = new System.Drawing.Point(396, 208);
+            this.text0.Name = "text0";
+            this.text0.Size = new System.Drawing.Size(100, 20);
+            this.text0.TabIndex = 13;
+            this.text0.TextChanged += new System.EventHandler(this.text1_TextChanged);
+            // 
+            // text1
+            // 
+            this.text1.Location = new System.Drawing.Point(396, 234);
+            this.text1.Name = "text1";
+            this.text1.Size = new System.Drawing.Size(100, 20);
+            this.text1.TabIndex = 14;
+            this.text1.TextChanged += new System.EventHandler(this.text2_TextChanged);
+            // 
+            // text2
+            // 
+            this.text2.Location = new System.Drawing.Point(396, 260);
+            this.text2.Name = "text2";
+            this.text2.Size = new System.Drawing.Size(100, 20);
+            this.text2.TabIndex = 15;
+            this.text2.TextChanged += new System.EventHandler(this.text3_TextChanged);
+            // 
+            // text3
+            // 
+            this.text3.Location = new System.Drawing.Point(396, 286);
+            this.text3.Name = "text3";
+            this.text3.Size = new System.Drawing.Size(100, 20);
+            this.text3.TabIndex = 16;
+            this.text3.TextChanged += new System.EventHandler(this.text4_TextChanged);
+            // 
+            // text4
+            // 
+            this.text4.Location = new System.Drawing.Point(396, 312);
+            this.text4.Name = "text4";
+            this.text4.Size = new System.Drawing.Size(100, 20);
+            this.text4.TabIndex = 17;
+            this.text4.TextChanged += new System.EventHandler(this.text5_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label1.Location = new System.Drawing.Point(280, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(251, 25);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Ļoti svarīga informācija!!!";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label5.Location = new System.Drawing.Point(206, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(400, 16);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Pirmo ievadiet preces daudzumu un pēc tam atzīmējiet pašu preci!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.text4);
+            this.Controls.Add(this.text3);
+            this.Controls.Add(this.text2);
+            this.Controls.Add(this.text1);
+            this.Controls.Add(this.text0);
             this.Controls.Add(this.check0);
             this.Controls.Add(this.check4);
             this.Controls.Add(this.check3);
@@ -206,6 +282,13 @@
         private System.Windows.Forms.CheckBox check3;
         private System.Windows.Forms.CheckBox check4;
         private System.Windows.Forms.CheckBox check0;
+        private System.Windows.Forms.TextBox text0;
+        private System.Windows.Forms.TextBox text1;
+        private System.Windows.Forms.TextBox text2;
+        private System.Windows.Forms.TextBox text3;
+        private System.Windows.Forms.TextBox text4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }
 
