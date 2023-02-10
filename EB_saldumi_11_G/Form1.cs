@@ -18,6 +18,7 @@ namespace EB_saldumi_11_G
         double sk4 = 0;
         double sk5 = 0;
         double sk6 = 0;
+        double sk7 = 0;
         double cena = 0;
         double skaits = 0;
         double kg0 = 0;
@@ -25,11 +26,13 @@ namespace EB_saldumi_11_G
         double kg2 = 0;
         double kg3 = 0;
         double kg4 = 0;
+        double kg5 = 0;
         double nauda0 = 0;
         double nauda1 = 0;
         double nauda2 = 0;
         double nauda3 = 0;
         double nauda4 = 0;
+        double nauda5 = 0;
         double atlikums = 0;
 
         public Form1()
@@ -57,13 +60,21 @@ namespace EB_saldumi_11_G
 
         private void check1_CheckedChanged(object sender, EventArgs e)
         {
-            if(check1.Checked == true)
+            try
             {
-                sk3 = 17.63;
-                skaits = skaits + 1;
-                kg1 = Convert.ToDouble(text1.Text);
-                nauda1 = kg1 * sk3;
+            if(check1.Checked == true)
+                        {
+                            sk3 = 17.63;
+                            skaits = skaits + 1;
+                            kg1 = Convert.ToDouble(text1.Text);
+                            nauda1 = kg1 * sk3;
+                        }
             }
+            catch
+            {
+                MessageBox.Show("Nekorekti ievadits daudzums!");
+            }
+            
         }
 
         private void check2_CheckedChanged(object sender, EventArgs e)
@@ -144,6 +155,42 @@ namespace EB_saldumi_11_G
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void text6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void check5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check5.Checked == true)
+            {
+                sk7 = 14.99;
+                skaits = skaits + 1;
+                kg5 = Convert.ToDouble(text2.Text);
+                nauda2 = kg5 * sk7;
+            }
         }
     }
 }
