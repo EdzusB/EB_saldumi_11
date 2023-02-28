@@ -47,10 +47,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.text1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.check5 = new System.Windows.Forms.CheckBox();
             this.text6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.vardaBox = new System.Windows.Forms.TextBox();
+            this.izmaksas1 = new System.Windows.Forms.TextBox();
+            this.izmaksas2 = new System.Windows.Forms.TextBox();
+            this.izmaksas3 = new System.Windows.Forms.TextBox();
+            this.izmaksas4 = new System.Windows.Forms.TextBox();
+            this.izmaksas5 = new System.Windows.Forms.TextBox();
+            this.izmaksas6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // daudzums
@@ -126,7 +132,7 @@
             // check1
             // 
             this.check1.AutoSize = true;
-            this.check1.Location = new System.Drawing.Point(243, 332);
+            this.check1.Location = new System.Drawing.Point(58, 330);
             this.check1.Name = "check1";
             this.check1.Size = new System.Drawing.Size(137, 17);
             this.check1.TabIndex = 8;
@@ -137,7 +143,7 @@
             // check2
             // 
             this.check2.AutoSize = true;
-            this.check2.Location = new System.Drawing.Point(243, 358);
+            this.check2.Location = new System.Drawing.Point(58, 353);
             this.check2.Name = "check2";
             this.check2.Size = new System.Drawing.Size(111, 17);
             this.check2.TabIndex = 9;
@@ -148,7 +154,7 @@
             // check3
             // 
             this.check3.AutoSize = true;
-            this.check3.Location = new System.Drawing.Point(243, 384);
+            this.check3.Location = new System.Drawing.Point(58, 376);
             this.check3.Name = "check3";
             this.check3.Size = new System.Drawing.Size(147, 17);
             this.check3.TabIndex = 10;
@@ -159,7 +165,7 @@
             // check4
             // 
             this.check4.AutoSize = true;
-            this.check4.Location = new System.Drawing.Point(243, 410);
+            this.check4.Location = new System.Drawing.Point(58, 399);
             this.check4.Name = "check4";
             this.check4.Size = new System.Drawing.Size(122, 17);
             this.check4.TabIndex = 11;
@@ -170,7 +176,7 @@
             // check0
             // 
             this.check0.AutoSize = true;
-            this.check0.Location = new System.Drawing.Point(242, 306);
+            this.check0.Location = new System.Drawing.Point(58, 307);
             this.check0.Name = "check0";
             this.check0.Size = new System.Drawing.Size(138, 17);
             this.check0.TabIndex = 12;
@@ -180,7 +186,7 @@
             // 
             // text0
             // 
-            this.text0.Location = new System.Drawing.Point(396, 304);
+            this.text0.Location = new System.Drawing.Point(209, 305);
             this.text0.Name = "text0";
             this.text0.Size = new System.Drawing.Size(100, 20);
             this.text0.TabIndex = 13;
@@ -188,7 +194,7 @@
             // 
             // text2
             // 
-            this.text2.Location = new System.Drawing.Point(396, 356);
+            this.text2.Location = new System.Drawing.Point(209, 350);
             this.text2.Name = "text2";
             this.text2.Size = new System.Drawing.Size(100, 20);
             this.text2.TabIndex = 15;
@@ -196,7 +202,7 @@
             // 
             // text3
             // 
-            this.text3.Location = new System.Drawing.Point(396, 382);
+            this.text3.Location = new System.Drawing.Point(209, 376);
             this.text3.Name = "text3";
             this.text3.Size = new System.Drawing.Size(100, 20);
             this.text3.TabIndex = 16;
@@ -204,7 +210,7 @@
             // 
             // text4
             // 
-            this.text4.Location = new System.Drawing.Point(396, 408);
+            this.text4.Location = new System.Drawing.Point(209, 399);
             this.text4.Name = "text4";
             this.text4.Size = new System.Drawing.Size(100, 20);
             this.text4.TabIndex = 17;
@@ -233,23 +239,16 @@
             // 
             // text1
             // 
-            this.text1.Location = new System.Drawing.Point(396, 330);
+            this.text1.Location = new System.Drawing.Point(209, 327);
             this.text1.Name = "text1";
             this.text1.Size = new System.Drawing.Size(100, 20);
             this.text1.TabIndex = 14;
             this.text1.TextChanged += new System.EventHandler(this.text2_TextChanged);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(296, 65);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 20;
-            // 
             // check5
             // 
             this.check5.AutoSize = true;
-            this.check5.Location = new System.Drawing.Point(242, 436);
+            this.check5.Location = new System.Drawing.Point(58, 422);
             this.check5.Name = "check5";
             this.check5.Size = new System.Drawing.Size(148, 17);
             this.check5.TabIndex = 21;
@@ -259,7 +258,7 @@
             // 
             // text6
             // 
-            this.text6.Location = new System.Drawing.Point(396, 434);
+            this.text6.Location = new System.Drawing.Point(209, 422);
             this.text6.Name = "text6";
             this.text6.Size = new System.Drawing.Size(100, 20);
             this.text6.TabIndex = 22;
@@ -275,16 +274,73 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // vardaBox
+            // 
+            this.vardaBox.Location = new System.Drawing.Point(371, 225);
+            this.vardaBox.Name = "vardaBox";
+            this.vardaBox.Size = new System.Drawing.Size(100, 20);
+            this.vardaBox.TabIndex = 24;
+            this.vardaBox.TextChanged += new System.EventHandler(this.vardaBox_TextChanged);
+            // 
+            // izmaksas1
+            // 
+            this.izmaksas1.Location = new System.Drawing.Point(371, 304);
+            this.izmaksas1.Name = "izmaksas1";
+            this.izmaksas1.Size = new System.Drawing.Size(100, 20);
+            this.izmaksas1.TabIndex = 25;
+            this.izmaksas1.TextChanged += new System.EventHandler(this.izmaksas1_TextChanged);
+            // 
+            // izmaksas2
+            // 
+            this.izmaksas2.Location = new System.Drawing.Point(371, 327);
+            this.izmaksas2.Name = "izmaksas2";
+            this.izmaksas2.Size = new System.Drawing.Size(100, 20);
+            this.izmaksas2.TabIndex = 26;
+            // 
+            // izmaksas3
+            // 
+            this.izmaksas3.Location = new System.Drawing.Point(371, 350);
+            this.izmaksas3.Name = "izmaksas3";
+            this.izmaksas3.Size = new System.Drawing.Size(100, 20);
+            this.izmaksas3.TabIndex = 27;
+            // 
+            // izmaksas4
+            // 
+            this.izmaksas4.Location = new System.Drawing.Point(371, 375);
+            this.izmaksas4.Name = "izmaksas4";
+            this.izmaksas4.Size = new System.Drawing.Size(100, 20);
+            this.izmaksas4.TabIndex = 28;
+            // 
+            // izmaksas5
+            // 
+            this.izmaksas5.Location = new System.Drawing.Point(371, 398);
+            this.izmaksas5.Name = "izmaksas5";
+            this.izmaksas5.Size = new System.Drawing.Size(100, 20);
+            this.izmaksas5.TabIndex = 29;
+            // 
+            // izmaksas6
+            // 
+            this.izmaksas6.Location = new System.Drawing.Point(371, 422);
+            this.izmaksas6.Name = "izmaksas6";
+            this.izmaksas6.Size = new System.Drawing.Size(100, 20);
+            this.izmaksas6.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(871, 551);
+            this.Controls.Add(this.izmaksas6);
+            this.Controls.Add(this.izmaksas5);
+            this.Controls.Add(this.izmaksas4);
+            this.Controls.Add(this.izmaksas3);
+            this.Controls.Add(this.izmaksas2);
+            this.Controls.Add(this.izmaksas1);
+            this.Controls.Add(this.vardaBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.text6);
             this.Controls.Add(this.check5);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.text4);
@@ -334,10 +390,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox text1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox check5;
         private System.Windows.Forms.TextBox text6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox vardaBox;
+        private System.Windows.Forms.TextBox izmaksas1;
+        private System.Windows.Forms.TextBox izmaksas2;
+        private System.Windows.Forms.TextBox izmaksas3;
+        private System.Windows.Forms.TextBox izmaksas4;
+        private System.Windows.Forms.TextBox izmaksas5;
+        private System.Windows.Forms.TextBox izmaksas6;
     }
 }
 

@@ -35,6 +35,13 @@ namespace EB_saldumi_11_G
         double nauda4 = 0;
         double nauda5 = 0;
         double atlikums = 0;
+        double Izmaksas1 = 0;
+        double Izmaksas2 = 0;
+        double Izmaksas3 = 0;
+        double Izmaksas4 = 0;
+        double Izmaksas5 = 0;
+        double Izmaksas6 = 0;
+
 
         public Form1()
         {
@@ -52,6 +59,9 @@ namespace EB_saldumi_11_G
             atlikums = sk1-(nauda0 + nauda1 + nauda2 + nauda3 + nauda4);
              daudzums_kg.Text = atlikums.ToString();
             //daudzums_kg.Text = daudzums_kg.ToString(); 
+            Izmaksas1 = kg0 * sk2;
+            Izmaksas1 = Convert.ToDouble(izmaksas1.Text);
+            izmaksas1.Text = Izmaksas1.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -196,15 +206,38 @@ namespace EB_saldumi_11_G
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FileInfo fi = new FileInfo("vards.txt");
-            FileStream fs = fi.Open(FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
-            StreamWriter sw = new StreamWriter(fs);
+            string vards = this.vardaBox.Text;
+            string failanosaukums = vards + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";
+            StreamWriter sw = new StreamWriter(failanosaukums);
+            sw.WriteLine(sk1);
             sw.WriteLine(atlikums);
+
             sw.Close();
         }
 
         private void daudzums_kg_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vardaBox_TextChanged(object sender, EventArgs e)
+        {
+            string vards = vardaBox.Text;
+        }
+        void faila_ierakstisana()
+        {
+            
+        }
+
+        private void izmaksas1_TextChanged(object sender, EventArgs e)
+        {
+            
+
 
         }
     }
