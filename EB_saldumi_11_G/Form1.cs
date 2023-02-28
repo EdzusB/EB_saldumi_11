@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace EB_saldumi_11_G
 {
@@ -115,7 +116,7 @@ namespace EB_saldumi_11_G
         {
             if(check0.Checked == true)
             {
-                sk2 = 9.88;
+                sk2 = 4.89;
                 skaits = skaits + 1;
                 kg0 = Convert.ToDouble(text0.Text);
                 nauda0 = kg0 * sk2;
@@ -191,6 +192,20 @@ namespace EB_saldumi_11_G
                 kg5 = Convert.ToDouble(text2.Text);
                 nauda2 = kg5 * sk7;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FileInfo fi = new FileInfo("vards.txt");
+            FileStream fs = fi.Open(FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine(atlikums);
+            sw.Close();
+        }
+
+        private void daudzums_kg_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

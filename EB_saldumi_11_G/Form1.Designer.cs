@@ -50,6 +50,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.check5 = new System.Windows.Forms.CheckBox();
             this.text6 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // daudzums
@@ -76,6 +77,7 @@
             this.daudzums_kg.Name = "daudzums_kg";
             this.daudzums_kg.Size = new System.Drawing.Size(100, 20);
             this.daudzums_kg.TabIndex = 2;
+            this.daudzums_kg.TextChanged += new System.EventHandler(this.daudzums_kg_TextChanged);
             // 
             // Nauda
             // 
@@ -263,12 +265,23 @@
             this.text6.TabIndex = 22;
             this.text6.TextChanged += new System.EventHandler(this.text6_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(655, 382);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Ierakstīšana failā";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(871, 551);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.text6);
             this.Controls.Add(this.check5);
             this.Controls.Add(this.dateTimePicker1);
@@ -324,6 +337,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox check5;
         private System.Windows.Forms.TextBox text6;
+        private System.Windows.Forms.Button button1;
     }
 }
 
