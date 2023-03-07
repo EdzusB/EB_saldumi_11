@@ -21,7 +21,6 @@ namespace EB_saldumi_11_G
         double sk6 = 0;
         double sk7 = 0;
         double cena = 0;
-        double skaits = 0;
         double kg0 = 0;
         double kg1 = 0;
         double kg2 = 0;
@@ -35,12 +34,6 @@ namespace EB_saldumi_11_G
         double nauda4 = 0;
         double nauda5 = 0;
         double atlikums = 0;
-        double Izmaksas1 = 0;
-        double Izmaksas2 = 0;
-        double Izmaksas3 = 0;
-        double Izmaksas4 = 0;
-        double Izmaksas5 = 0;
-        double Izmaksas6 = 0;
         double atlaide = 1;
         double gala_atlaide = 0;
         double summa = 0;
@@ -58,6 +51,28 @@ namespace EB_saldumi_11_G
 
         private void aprekins_Click(object sender, EventArgs e)
         {
+            if (text0.Text == "")
+            {
+                kg0 = 0;
+            }
+            else
+            {
+                kg0 = Convert.ToDouble(text1.Text);
+            }
+            double rez0 = Izmaksas1(kg0, sk2);
+            izmaksas1.Text = rez0.ToString();
+
+            if (text1.Text == "" )
+            {
+                kg1 = 0;
+            }
+            else
+            {
+                kg1 = Convert.ToDouble(text1.Text);
+            }
+
+            double rez1 = Izmaksas1(kg1, sk3);
+            izmaksas2.Text = rez1.ToString();
 
             if (checkatlaide.Checked == true)
             {
@@ -73,20 +88,13 @@ namespace EB_saldumi_11_G
             gala_summa.Text = gala_cena.ToString();
             atlikums = sk1 - gala_cena;
             daudzums_kg.Text = atlikums.ToString();
-            Izmaksas1 = kg0 * sk2;
-            Izmaksas2 = sk3 * kg1;
-            Izmaksas3 = sk4 * kg2;
-            Izmaksas4 = sk5 * kg3;
-            Izmaksas5 = sk6 * kg4;
-            Izmaksas6 = sk7 * kg5;
 
-
-            izmaksas1.Text = Izmaksas1.ToString();
-            izmaksas2.Text = Izmaksas2.ToString();
-            izmaksas3.Text = Izmaksas3.ToString();
-            izmaksas4.Text = Izmaksas4.ToString();
-            izmaksas5.Text = Izmaksas5.ToString();
-            izmaksas6.Text = Izmaksas6.ToString();
+            
+            //izmaksas2.Text = nauda1.ToString();
+            //izmaksas3.Text = nauda2.ToString();
+            //izmaksas4.Text = nauda3.ToString();
+            //izmaksas5.Text = nauda4.ToString();
+            //izmaksas6.Text = nauda5.ToString();
 
             if (atlikums < 0)
             {
@@ -108,9 +116,6 @@ namespace EB_saldumi_11_G
             if(check1.Checked == true)
                         {
                             sk3 = 17.63;
-                            skaits = skaits + 1;
-                            kg1 = Convert.ToDouble(text1.Text);
-                            nauda1 = kg1 * sk3;
                         }
             }
             catch
@@ -125,7 +130,6 @@ namespace EB_saldumi_11_G
             if(check2.Checked == true)
             {
                 sk4 = 7.49;
-                skaits = skaits + 1;
                 kg2 = Convert.ToDouble(text2.Text);
                 nauda2 = kg2 * sk4;
             }
@@ -136,7 +140,6 @@ namespace EB_saldumi_11_G
             if(check3.Checked == true)
             {
                 sk5 = 12.19;
-                skaits = skaits + 1;
                 kg3 = Convert.ToDouble(text3.Text);
                 nauda3 = kg3 * sk5;
             }
@@ -148,7 +151,6 @@ namespace EB_saldumi_11_G
             if (check4.Checked == true)
             {
                 sk6 = 10.69;
-                skaits = skaits + 1;
                 kg4 = Convert.ToDouble(text4.Text);
                 nauda4 = kg4 * sk6;
             }
@@ -159,10 +161,8 @@ namespace EB_saldumi_11_G
             if(check0.Checked == true)
             {
                 sk2 = 4.89;
-                skaits = skaits + 1;
-                kg0 = Convert.ToDouble(text0.Text);
-                nauda0 = kg0 * sk2;
             }
+            
         }
 
         private void daudzums_TextChanged(object sender, EventArgs e)
@@ -230,7 +230,6 @@ namespace EB_saldumi_11_G
             if (check5.Checked == true)
             {
                 sk7 = 14.99;
-                skaits = skaits + 1;
                 kg5 = Convert.ToDouble(text6.Text);
                 nauda5 = kg5 * sk7;
             }
@@ -238,85 +237,93 @@ namespace EB_saldumi_11_G
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int ceka_Nr = 0;
+           
             string vards = this.vardaBox.Text;
-            string failanosaukums = vards + ceka_Nr + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";
-
+            string failanosaukums = vards + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";
+            
             if (File.Exists(failanosaukums))
             {
-                ceka_Nr = ceka_Nr + 1;
-                failanosaukums = vards + ceka_Nr + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";
+
+                int ceka_Nr = 0;
+
+                failanosaukums = vards + ceka_Nr.ToString() + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";  
+                         
             }
 
-
             StreamWriter sw = new StreamWriter(failanosaukums);
+           
 
             sw.WriteLine("SIA <<RIMI>>");
             sw.WriteLine(" ");
            
-            if (text0.Text.Equals(" "))
-            {
-                MessageBox.Show("Aizpildiet šo lauku!");
-            }
-            else
+            if (nauda0 != 0)
             {
                 sw.WriteLine("Marmelāde");
                 sw.WriteLine(kg0 + "kg x " + sk2 + "Eur = " + nauda0 + "Eur");
             }
-
-            if (text1.Text.Equals(" "))
-            {
-                MessageBox.Show("Aizpildiet šo lauku!");
-            }
             else
+            {
+                
+            }
+
+            if (nauda1 != 0)
             {
                 sw.WriteLine("Konfektes serenāde");
                 sw.WriteLine(kg1 + "kg x " + sk3 + "Eur = " + nauda1 + "Eur");
             }
-
-            if (text2.Text.Equals(" "))
-            {
-                MessageBox.Show("Aizpildiet šo lauku!");
-            }
             else
+            {
+                
+            }
+
+            if (nauda2 != 0)
             {
                 sw.WriteLine("Konfektes Migle");
                 sw.WriteLine(kg2 + "kg x " + sk4 + "Eur = " + nauda2 + "Eur");
             }
-
-            if (text3.Text.Equals(" "))
-            {
-                MessageBox.Show("Aizpildiet šo lauku!");
-            }
             else
+            {
+                
+            }
+
+            if (nauda3 != 0)
             {
                 sw.WriteLine("Konfektes Rudzupuķe");
                 sw.WriteLine(kg3 + "kg x " + sk5 + "Eur = " + nauda3 + "Eur");
             }
-
-            if (text4.Text.Equals(" "))
-            {
-                MessageBox.Show("Aizpildiet šo lauku!");
-            }
             else
             {
-                sw.WriteLine("Konfektes Gotiņa");
+                
+            }
+
+            if (nauda4 != 0)
+            {
+                 sw.WriteLine("Konfektes Gotiņa");
                 sw.WriteLine(kg4 + "kg x " + sk6 + "Eur = " + nauda4 + "Eur");
             }
-
-            if (text6.Text.Equals(" "))
-            {
-                MessageBox.Show("Aizpildiet šo lauku!");
-            }
             else
+            {
+               
+            }
+
+            if (nauda5 != 0)
             {
                 sw.WriteLine("Konfektes Vētrasputns");
                 sw.WriteLine(kg5 + "kg x " + sk7 + "Eur = " + nauda5 + "Eur");
             }
+            else
+            {
+                
+            }
 
             sw.WriteLine(" ");
             sw.WriteLine("Samaksai Eur " + summa);
+
+            if(gala_atlaide != 0)
+            {
             sw.WriteLine("Iegūtā atlaide Eur " + gala_atlaide);
+            }
+            
             sw.WriteLine("Samaksai pēc atlaides Eur " + gala_cena);
             sw.WriteLine("Saņemtā nauda Eur " + sk1);
             sw.WriteLine("Izdotā nauda Eur " + atlikums);
@@ -361,6 +368,18 @@ namespace EB_saldumi_11_G
                 atlaide = 0.13;
                 gala_atlaide = sk1 * atlaide;
             }
+        }
+
+        static double Izmaksas0(double kg0, double sk2)
+        {
+            double nauda0 = kg0* sk2;
+            return nauda0;
+        }
+                
+        static double Izmaksas1(double kg1, double sk3 )
+        {
+            double nauda1 = kg1 * sk3;
+            return nauda1;
         }
     }
 }
