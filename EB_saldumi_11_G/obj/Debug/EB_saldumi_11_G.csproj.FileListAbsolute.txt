@@ -8,3 +8,14 @@ Z:\Programmesana.11\EB_saldumi_11_G\EB_saldumi_11_G\bin\Debug\EB_saldumi_11_G.ex
 Z:\Programmesana.11\EB_saldumi_11_G\EB_saldumi_11_G\bin\Debug\EB_saldumi_11_G.pdb
 Z:\Programmesana.11\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.exe
 Z:\Programmesana.11\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.pdb
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\bin\Debug\EB_saldumi_11_G.exe.config
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\bin\Debug\EB_saldumi_11_G.exe
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\bin\Debug\EB_saldumi_11_G.pdb
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.csproj.AssemblyReference.cache
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.Form1.resources
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.Properties.Resources.resources
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.csproj.GenerateResource.cache
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.csproj.CoreCompileInputs.cache
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.exe
+C:\Users\Lietotajs\Documents\Programmesana\EB_saldumi_11_G\EB_saldumi_11_G\obj\Debug\EB_saldumi_11_G.pdb
