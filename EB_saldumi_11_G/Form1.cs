@@ -61,11 +61,16 @@ namespace EB_saldumi_11_G
             {
                 kg0 = 0;
                 izmaksas1.Text = 0.ToString();
-            }
+            }           
             else
             {
                 kg0 = Convert.ToDouble(text0.Text);
+                if(kg0<0)
+                {
+                MessageBox.Show("Jūs mums pārdosiet konfektes?");
+               }              
             }
+            
             rez0 = Izmaksas0(kg0, sk2);
             izmaksas1.Text = rez0.ToString();
 
@@ -76,7 +81,11 @@ namespace EB_saldumi_11_G
             }
             else
             {
-                kg1 = Convert.ToDouble(text1.Text);           
+                kg1 = Convert.ToDouble(text1.Text);
+                if (kg1 < 0)
+                {
+                    MessageBox.Show("Jūs mums pārdosiet konfektes?");
+                }
             }
             rez1 = Izmaksas1(kg1, sk3);
             izmaksas2.Text = rez1.ToString();
@@ -89,7 +98,11 @@ namespace EB_saldumi_11_G
             else
             {
                 kg2 = Convert.ToDouble(text2.Text);
-                
+                if (kg2 < 0)
+                {
+                    MessageBox.Show("Jūs mums pārdosiet konfektes?");
+                }
+
             }
             rez2 = Izmaksas2(kg2, sk4);
             izmaksas3.Text = rez2.ToString();
@@ -103,7 +116,11 @@ namespace EB_saldumi_11_G
             else
             {
                 kg3 = Convert.ToDouble(text3.Text);
-                
+                if (kg3 < 0)
+                {
+                    MessageBox.Show("Jūs mums pārdosiet konfektes?");
+                }
+
             }
             rez3 = Izmaksas3(kg3, sk5);
             izmaksas4.Text = rez3.ToString();
@@ -117,7 +134,11 @@ namespace EB_saldumi_11_G
             else
             {
                 kg4 = Convert.ToDouble(text4.Text);
-                
+                if (kg4 < 0)
+                {
+                    MessageBox.Show("Jūs mums pārdosiet konfektes?");
+                }
+
             }
             rez4 = Izmaksas4(kg4, sk6);
             izmaksas5.Text = rez4.ToString();
@@ -131,7 +152,11 @@ namespace EB_saldumi_11_G
             else
             {
                 kg5 = Convert.ToDouble(text6.Text);
-                
+                if (kg5 < 0)
+                {
+                    MessageBox.Show("Jūs mums pārdosiet konfektes?");
+                }
+
             }
             rez5 = Izmaksas5(kg5, sk7);
             izmaksas6.Text = rez5.ToString();
@@ -144,7 +169,15 @@ namespace EB_saldumi_11_G
                 atlaidesbox.Text = gala_atlaide.ToString();
             }
 
-            sk1 = Convert.ToDouble(daudzums.Text);
+            if(daudzums.Text == "")
+            {
+                MessageBox.Show("Lūdzu aizpildiet pieejamā naudas daudzuma lauku!");
+            }
+            else
+            {
+                 sk1 = Convert.ToDouble(daudzums.Text);
+            }
+            
             summa = rez0 + rez1 + rez2 + rez3 + rez4 + rez5;
             gala_cena = summa - gala_atlaide;
 
@@ -155,7 +188,6 @@ namespace EB_saldumi_11_G
             if (atlikums < 0)
             {
                 MessageBox.Show("Jums nav pietiekami daudz naudas!!!");
-                Application.Exit();
             }
         
         }
@@ -283,7 +315,14 @@ namespace EB_saldumi_11_G
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string vards = this.vardaBox.Text;
+            string vards;
+
+            if(string.IsNullOrEmpty(vardaBox.Text))
+            {
+                MessageBox.Show("Lūdzu norādiet savu vārdu!");
+            }
+
+             vards = this.vardaBox.Text;
             ierakstisana_faila( vards, rez0, rez1, rez2, rez3, rez4, rez5, kg0, kg1, kg2, kg3, kg4, kg5, sk1, sk2, sk3, sk4, sk5, sk6, sk7, summa, gala_atlaide, gala_cena, atlikums);
 
 
@@ -362,19 +401,9 @@ namespace EB_saldumi_11_G
 
         public static void ierakstisana_faila(string vards, double rez0, double rez1, double rez2, double rez3, double rez4, double rez5, double kg0,double kg1, double kg2, double kg3, double kg4, double kg5, double sk1, double sk2, double sk3, double sk4, double sk5, double sk6, double sk7, double summa, double gala_atlaide, double gala_cena, double atlikums)      
         {
-            string failanosaukums = vards + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";
-            
-            if (File.Exists(failanosaukums))
-            {
-
-                int ceka_Nr = 0;
-
-                failanosaukums = vards + ceka_Nr.ToString() + "_" + DateTime.Now.ToString("ddMMyyyy_HHmmss") + "_ceks.txt";  
+            string failanosaukums = vards + "_" + DateTime.Now.ToString("ddMMyyyy_HHmmss") + "_ceks.txt";                     
                          
-            }
-
-            StreamWriter sw = new StreamWriter(failanosaukums);
-           
+            StreamWriter sw = new StreamWriter(failanosaukums);          
 
             sw.WriteLine("SIA <<RIMI>>");
             sw.WriteLine(" ");
@@ -428,7 +457,6 @@ namespace EB_saldumi_11_G
             sw.WriteLine("Izdotā nauda Eur " + atlikums);
             sw.Close();
         }
-
         private void label9_Click(object sender, EventArgs e)
         {
 
