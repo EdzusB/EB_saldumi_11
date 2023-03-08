@@ -38,6 +38,12 @@ namespace EB_saldumi_11_G
         double gala_atlaide = 0;
         double summa = 0;
         double gala_cena = 0;
+        double rez0 = 0;
+        double rez1 = 0;
+        double rez2 = 0;
+        double rez3 = 0;
+        double rez4 = 0;
+        double rez5 = 0;
 
         public Form1()
         {
@@ -54,25 +60,82 @@ namespace EB_saldumi_11_G
             if (text0.Text == "")
             {
                 kg0 = 0;
+                izmaksas1.Text = 0.ToString();
             }
             else
             {
-                kg0 = Convert.ToDouble(text1.Text);
+                kg0 = Convert.ToDouble(text0.Text);
             }
-            double rez0 = Izmaksas1(kg0, sk2);
+            rez0 = Izmaksas0(kg0, sk2);
             izmaksas1.Text = rez0.ToString();
 
             if (text1.Text == "" )
             {
                 kg1 = 0;
+                izmaksas2.Text = 0.ToString();
             }
             else
             {
-                kg1 = Convert.ToDouble(text1.Text);
+                kg1 = Convert.ToDouble(text1.Text);           
             }
-
-            double rez1 = Izmaksas1(kg1, sk3);
+            rez1 = Izmaksas1(kg1, sk3);
             izmaksas2.Text = rez1.ToString();
+
+            if (text2.Text == "")
+            {
+                kg2 = 0;
+                izmaksas3.Text = 0.ToString();
+            }
+            else
+            {
+                kg2 = Convert.ToDouble(text2.Text);
+                
+            }
+            rez2 = Izmaksas2(kg2, sk4);
+            izmaksas3.Text = rez2.ToString();
+            
+
+            if (text3.Text == "")
+            {
+                kg3 = 0;
+                izmaksas4.Text = 0.ToString();
+            }
+            else
+            {
+                kg3 = Convert.ToDouble(text3.Text);
+                
+            }
+            rez3 = Izmaksas3(kg3, sk5);
+            izmaksas4.Text = rez3.ToString();
+            
+
+            if (text4.Text == "")
+            {
+                kg4 = 0;
+                izmaksas5.Text = 0.ToString();
+            }
+            else
+            {
+                kg4 = Convert.ToDouble(text4.Text);
+                
+            }
+            rez4 = Izmaksas4(kg4, sk6);
+            izmaksas5.Text = rez4.ToString();
+            
+
+            if (text6.Text == "")
+            {
+                kg5 = 0;
+                izmaksas6.Text = 0.ToString();
+            }
+            else
+            {
+                kg5 = Convert.ToDouble(text6.Text);
+                
+            }
+            rez5 = Izmaksas5(kg5, sk7);
+            izmaksas6.Text = rez5.ToString();
+            
 
             if (checkatlaide.Checked == true)
             {
@@ -82,19 +145,12 @@ namespace EB_saldumi_11_G
             }
 
             sk1 = Convert.ToDouble(daudzums.Text);
-            summa = nauda0 + nauda1 + nauda2 + nauda3 + nauda4 + nauda5;
+            summa = rez0 + rez1 + rez2 + rez3 + rez4 + rez5;
             gala_cena = summa - gala_atlaide;
 
             gala_summa.Text = gala_cena.ToString();
             atlikums = sk1 - gala_cena;
             daudzums_kg.Text = atlikums.ToString();
-
-            
-            //izmaksas2.Text = nauda1.ToString();
-            //izmaksas3.Text = nauda2.ToString();
-            //izmaksas4.Text = nauda3.ToString();
-            //izmaksas5.Text = nauda4.ToString();
-            //izmaksas6.Text = nauda5.ToString();
 
             if (atlikums < 0)
             {
@@ -108,7 +164,14 @@ namespace EB_saldumi_11_G
         {
 
         }
-
+        private void check0_CheckedChanged(object sender, EventArgs e)
+                {
+                    if(check0.Checked == true)
+                    {
+                        sk2 = 4.89;
+                    }
+            
+                }
         private void check1_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -130,8 +193,6 @@ namespace EB_saldumi_11_G
             if(check2.Checked == true)
             {
                 sk4 = 7.49;
-                kg2 = Convert.ToDouble(text2.Text);
-                nauda2 = kg2 * sk4;
             }
         }
 
@@ -140,8 +201,6 @@ namespace EB_saldumi_11_G
             if(check3.Checked == true)
             {
                 sk5 = 12.19;
-                kg3 = Convert.ToDouble(text3.Text);
-                nauda3 = kg3 * sk5;
             }
         }
 
@@ -151,18 +210,15 @@ namespace EB_saldumi_11_G
             if (check4.Checked == true)
             {
                 sk6 = 10.69;
-                kg4 = Convert.ToDouble(text4.Text);
-                nauda4 = kg4 * sk6;
             }
         }
 
-        private void check0_CheckedChanged(object sender, EventArgs e)
+               private void check5_CheckedChanged(object sender, EventArgs e)
         {
-            if(check0.Checked == true)
+            if (check5.Checked == true)
             {
-                sk2 = 4.89;
+                sk7 = 14.99;
             }
-            
         }
 
         private void daudzums_TextChanged(object sender, EventArgs e)
@@ -225,109 +281,12 @@ namespace EB_saldumi_11_G
 
         }
 
-        private void check5_CheckedChanged(object sender, EventArgs e)
-        {
-            if (check5.Checked == true)
-            {
-                sk7 = 14.99;
-                kg5 = Convert.ToDouble(text6.Text);
-                nauda5 = kg5 * sk7;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-           
             string vards = this.vardaBox.Text;
-            string failanosaukums = vards + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";
-            
-            if (File.Exists(failanosaukums))
-            {
+            ierakstisana_faila( vards, rez0, rez1, rez2, rez3, rez4, rez5, kg0, kg1, kg2, kg3, kg4, kg5, sk1, sk2, sk3, sk4, sk5, sk6, sk7, summa, gala_atlaide, gala_cena, atlikums);
 
-                int ceka_Nr = 0;
 
-                failanosaukums = vards + ceka_Nr.ToString() + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";  
-                         
-            }
-
-            StreamWriter sw = new StreamWriter(failanosaukums);
-           
-
-            sw.WriteLine("SIA <<RIMI>>");
-            sw.WriteLine(" ");
-           
-            if (nauda0 != 0)
-            {
-                sw.WriteLine("Marmelāde");
-                sw.WriteLine(kg0 + "kg x " + sk2 + "Eur = " + nauda0 + "Eur");
-            }
-            else
-            {
-                
-            }
-
-            if (nauda1 != 0)
-            {
-                sw.WriteLine("Konfektes serenāde");
-                sw.WriteLine(kg1 + "kg x " + sk3 + "Eur = " + nauda1 + "Eur");
-            }
-            else
-            {
-                
-            }
-
-            if (nauda2 != 0)
-            {
-                sw.WriteLine("Konfektes Migle");
-                sw.WriteLine(kg2 + "kg x " + sk4 + "Eur = " + nauda2 + "Eur");
-            }
-            else
-            {
-                
-            }
-
-            if (nauda3 != 0)
-            {
-                sw.WriteLine("Konfektes Rudzupuķe");
-                sw.WriteLine(kg3 + "kg x " + sk5 + "Eur = " + nauda3 + "Eur");
-            }
-            else
-            {
-                
-            }
-
-            if (nauda4 != 0)
-            {
-                 sw.WriteLine("Konfektes Gotiņa");
-                sw.WriteLine(kg4 + "kg x " + sk6 + "Eur = " + nauda4 + "Eur");
-            }
-            else
-            {
-               
-            }
-
-            if (nauda5 != 0)
-            {
-                sw.WriteLine("Konfektes Vētrasputns");
-                sw.WriteLine(kg5 + "kg x " + sk7 + "Eur = " + nauda5 + "Eur");
-            }
-            else
-            {
-                
-            }
-
-            sw.WriteLine(" ");
-            sw.WriteLine("Samaksai Eur " + summa);
-
-            if(gala_atlaide != 0)
-            {
-            sw.WriteLine("Iegūtā atlaide Eur " + gala_atlaide);
-            }
-            
-            sw.WriteLine("Samaksai pēc atlaides Eur " + gala_cena);
-            sw.WriteLine("Saņemtā nauda Eur " + sk1);
-            sw.WriteLine("Izdotā nauda Eur " + atlikums);
-            sw.Close();
         }
 
         private void daudzums_kg_TextChanged(object sender, EventArgs e)
@@ -343,10 +302,6 @@ namespace EB_saldumi_11_G
         private void vardaBox_TextChanged(object sender, EventArgs e)
         {
             string vards = vardaBox.Text;
-        }
-        void faila_ierakstisana()
-        {
-            
         }
 
         private void izmaksas1_TextChanged(object sender, EventArgs e)
@@ -369,7 +324,6 @@ namespace EB_saldumi_11_G
                 gala_atlaide = sk1 * atlaide;
             }
         }
-
         static double Izmaksas0(double kg0, double sk2)
         {
             double nauda0 = kg0* sk2;
@@ -380,6 +334,104 @@ namespace EB_saldumi_11_G
         {
             double nauda1 = kg1 * sk3;
             return nauda1;
+        }
+
+        static double Izmaksas2(double kg2, double sk4)
+        {
+            double nauda2 = kg2 * sk4;
+            return nauda2;
+        }
+
+        static double Izmaksas3(double kg3, double sk5)
+        {
+            double nauda3 = kg3 * sk5;
+            return nauda3;
+        }
+
+        static double Izmaksas4(double kg4, double sk6)
+        {
+            double nauda4 = kg4 * sk6;
+            return nauda4;
+        }
+
+        static double Izmaksas5(double kg5, double sk7)
+        {
+            double nauda5 = kg5 * sk7;
+            return nauda5;
+        }
+
+        public static void ierakstisana_faila(string vards, double rez0, double rez1, double rez2, double rez3, double rez4, double rez5, double kg0,double kg1, double kg2, double kg3, double kg4, double kg5, double sk1, double sk2, double sk3, double sk4, double sk5, double sk6, double sk7, double summa, double gala_atlaide, double gala_cena, double atlikums)      
+        {
+            string failanosaukums = vards + "_" + DateTime.Now.ToString("ddMMyyyy") + "_ceks.txt";
+            
+            if (File.Exists(failanosaukums))
+            {
+
+                int ceka_Nr = 0;
+
+                failanosaukums = vards + ceka_Nr.ToString() + "_" + DateTime.Now.ToString("ddMMyyyy_HHmmss") + "_ceks.txt";  
+                         
+            }
+
+            StreamWriter sw = new StreamWriter(failanosaukums);
+           
+
+            sw.WriteLine("SIA <<RIMI>>");
+            sw.WriteLine(" ");
+           
+            if (rez0 != 0)
+            {
+                sw.WriteLine("Marmelāde");
+                sw.WriteLine(kg0 + "kg x " + sk2 + "Eur = " + rez0 + "Eur");
+            }
+            
+            if (rez1 != 0)
+            {
+                sw.WriteLine("Konfektes serenāde");
+                sw.WriteLine(kg1 + "kg x " + sk3 + "Eur = " + rez1 + "Eur");
+            }
+
+            if (rez2 != 0)
+            {
+                sw.WriteLine("Konfektes Migle");
+                sw.WriteLine(kg2 + "kg x " + sk4 + "Eur = " + rez2 + "Eur");
+            }
+
+            if (rez3 != 0)
+            {
+                sw.WriteLine("Konfektes Rudzupuķe");
+                sw.WriteLine(kg3 + "kg x " + sk5 + "Eur = " + rez3 + "Eur");
+            }
+
+            if (rez4 != 0)
+            {
+                 sw.WriteLine("Konfektes Gotiņa");
+                sw.WriteLine(kg4 + "kg x " + sk6 + "Eur = " + rez4 + "Eur");
+            }
+
+            if (rez5 != 0)
+            {
+                sw.WriteLine("Konfektes Vētrasputns");
+                sw.WriteLine(kg5 + "kg x " + sk7 + "Eur = " + rez5 + "Eur");
+            }
+
+            sw.WriteLine(" ");
+            sw.WriteLine("Samaksai Eur " + summa);
+
+            if(gala_atlaide != 0)
+            {
+            sw.WriteLine("Iegūtā atlaide Eur " + gala_atlaide);
+            }
+            
+            sw.WriteLine("Samaksai pēc atlaides Eur " + gala_cena);
+            sw.WriteLine("Saņemtā nauda Eur " + sk1);
+            sw.WriteLine("Izdotā nauda Eur " + atlikums);
+            sw.Close();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
